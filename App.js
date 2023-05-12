@@ -13,7 +13,7 @@ export default function App() {
         <ProductList></ProductList>
         <InputContainer></InputContainer>
       </View> */}
-      <ProductItem>
+      <ProductItem></ProductItem>
 
     </View>
   );

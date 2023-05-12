@@ -13,16 +13,20 @@ const container={
 
 //상품 리스트 내부 상품 요소 담당 컴포넌트
 const ProductItem=(props)=>{
-  const[name,setName]=useState(props.name);
-  const[price,setPrice]=useState(props.price);
-  const[euro,setEuro]=useState(props.euro);
-  const[count,setCount]=useState(props.count);
 
 
   return(
     <View style={container}>
-      <ItemInfo></ItemInfo>
-      <ItemControl></ItemControl>
+      <ItemInfo
+      name={props.name}
+      price={props.price}
+      euro={props.euro}
+      ></ItemInfo>
+
+      
+      <ItemControl
+      count={props.count}
+      ></ItemControl>
     </View>
 
   );
