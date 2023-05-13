@@ -13,17 +13,17 @@ export default function App() {
 
   return (
     <View style={{width,height}}>
-      {/* <View>
+      <View>
         <ProductList></ProductList>
         <InputContainer></InputContainer>
-      </View> */}
-      <ProductItem
+      </View>
+      {/* <ProductItem
       name="책"
       price={100000}
       euro={20000009}
       count={1}
-      ></ProductItem>
-      {/* <Text>hello</Text> */}
+      ></ProductItem> */}
+      <Text>hello</Text>
     </View>
   );
 }
