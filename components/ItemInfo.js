@@ -1,5 +1,16 @@
-import {View} from 'react-native'
+import React,{ useState } from 'react';
+import {View,Text} from 'react-native'
 
+
+const itemInfoBox={
+  flex:1,
+  
+}
+
+const nameBox={
+  flex:1,
+  flexDirection:"row"
+}
 
 
 
@@ -8,26 +19,22 @@ const ItemInfo=(props)=>{
   const[name,setName]=useState(props.name);
   const[price,setPrice]=useState(props.price);
   const[euro,setEuro]=useState(props.euro);
-  const[count,setCount]=useState(props.count);
+  const[id,idKey]=useState(props.id+1);
 
-  
   return(
-    <View>
-      <View>
-        <View>
-          <Text>{}</Text>
-        </View>
-        <View>
+    <View style={itemInfoBox}>
 
-        </View>
+      <View style={nameBox}>
+        <Text>{id}</Text>
+        <Text>{name}</Text>
       </View>
 
       <View>
-
+        <Text>{price}</Text>
       </View>
 
       <View>
-
+        <Text>{euro}</Text>
       </View>
     </View>
   );
