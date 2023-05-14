@@ -16,7 +16,7 @@ const ProductList=(props)=>{
     <View style={ListContainer}>
       {products.map((item,index)=>(
         <ProductItem
-        id={index}
+        key={index}
         name={item.name}
         price={item.price}
         count={item.count}

@@ -24,8 +24,7 @@ const ProductItem=(props)=>{
       <ItemInfo
       name={props.name}
       price={props.price}
-      euro={props.euro}
-      id={props.id}
+      key={props.key}
       ></ItemInfo>
 
       {/* 아이템 정보를 컨트롤하는 컴포넌트 */}
