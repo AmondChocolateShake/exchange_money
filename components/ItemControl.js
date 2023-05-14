@@ -4,13 +4,14 @@ import {useState} from 'react'
 const cntController={
   flex:1,
   flexDirection:"row",
-
+  alignItems:"center",
+  justifyContent:"space-around"
 }
 
 const btnSize={
   width:30,
   height:30,
-  
+
 }
 
 const inputSt={
@@ -40,9 +41,7 @@ const ItemControl=(props)=>{
         <Button title="X" color="grey"></Button>
       </View>
 
-      <View>
-        <TextInput style={inputSt}></TextInput>
-      </View>
+      <TextInput style={inputSt}></TextInput>
 
       <View style={cntController}>
         <View style={btnSize}>
