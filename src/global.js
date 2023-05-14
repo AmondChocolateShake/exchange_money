@@ -4,7 +4,7 @@ const product={
   price:0,
   count:0,
 }
-const products=[
+export const products=[
   {
     name:"라면",
     price:1000,

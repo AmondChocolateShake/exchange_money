@@ -1,7 +1,8 @@
+import React from 'react'
 import {View} from 'react-native';
 
 import ProductItem from './ProductItem';
-import { getProducts } from '../src/global';
+import { getProducts, products } from '../src/global';
 
 const ListContainer={
   flex:3,  
@@ -10,20 +11,17 @@ const ListContainer={
 
 //상품이 담기는 리스트 컴포넌트 
 const ProductList=(props)=>{
-  const products=getProducts();
-
 
   return(
     <View style={ListContainer}>
-      {products.map((item,index)=(
+      {products.map((item,index)=>(
         <ProductItem
-        key={index}
+        id={index}
         name={item.name}
         price={item.price}
         count={item.count}
         ></ProductItem>
       ))}
-      <ProductItem></ProductItem>
     </View>
 
   );
