@@ -6,11 +6,12 @@ import ItemControl from './ItemControl'
 
 
 const container={
-  flex:1,
   flexDirection:"row",
   justifyContent:"space-between",
   borderWidth:1,
-  borderColor:"black"
+  borderColor:"black",
+  width:"95%",
+  height:130
 
 }
 //상품 리스트 내부 상품 요소 담당 컴포넌트

@@ -23,8 +23,10 @@ const inputSt={
 
 const container={
   flex:1,
-  alignItems:"center"
-
+  flexDirection:"column",
+  justifyContent:"space-around",
+  alignItems:"center",
+  backgroundColor:"blue",
 }
 
 

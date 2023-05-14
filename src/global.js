@@ -3,9 +3,26 @@ const product={
   name:"",
   price:0,
   count:0,
-  key:0
 }
-const products=[]
+const products=[
+  {
+    name:"라면",
+    price:1000,
+    count:1,
+  },
+  {
+    name:"라면",
+    price:1000,
+    count:1,
+  },
+  {
+    name:"라면",
+    price:1000,
+    count:1,
+  }
+
+
+]
 
 
 //상품 데이터 입력 함수
@@ -22,4 +39,9 @@ export function putProductData(data){
 function addToList(obj){
   products=[...product,obj];
   console.log(product);
+}
+
+
+export function getProducts(){
+  return products;
 }
