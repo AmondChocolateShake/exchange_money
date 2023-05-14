@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {Button, TextInput, View, Text} from 'react-native'
 
 const textInputSt={
@@ -31,20 +32,54 @@ const switchBoxSt={
 }
 
 const btnStyle={
-  width:"80%"
+  width:"80%",
+  backgroundColor:""
 }
+
+
+
 
 
 //상품에 넣을 상품 정보 인풋들을 담는 컨테이너 컴포넌트
 const InputContainer=(props)=>{
-
+  const[name,setName]=useState("");
+  const[price,setPrice]=useState("");
+  const[won,setWon]=useState("");
+  const[euro,setEuro]=useState(0);
   
+
+
+
+  const handleNameInput=(name)=>{
+    setName(name);
+  }
+
+  const handlePriceInput=(price)=>{
+    setPrice(price)
+  }
+
+  const handleEuroInput=(euro)=>{
+    setEuro(euro);
+  }
+
   return(
     <View style={container}>
 
       <View style={itemInputBox}>
-          <TextInput style={textInputSt}></TextInput>        
-          <TextInput style={textInputSt}></TextInput>  
+          <TextInput 
+          style={textInputSt}
+          placeholder="Write a name"
+          value={name}
+          onChangeText={handleNameInput}
+          ></TextInput>       
+
+          <TextInput 
+          style={textInputSt}
+          placeholder="Price(won)"
+          value={price}
+          onChangeText={handlePriceInput}
+          ></TextInput>  
+
           <View style={btnStyle}>
             <Button title='Insert'></Button>
           </View>      
@@ -52,8 +87,13 @@ const InputContainer=(props)=>{
 
       <View style={switchBoxSt}>
         <Text>변환기</Text>
-        <TextInput style={textInputSt}></TextInput>
-        <TextInput style={textInputSt}></TextInput>
+        <TextInput 
+        style={textInputSt}
+        placeholder="Won"
+        ></TextInput>
+        <TextInput style={textInputSt}
+        placeholder="Euros"
+        ></TextInput>
       </View>
     </View>
   );
