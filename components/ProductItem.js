@@ -11,7 +11,8 @@ const container={
   borderWidth:1,
   borderColor:"black",
   width:"95%",
-  height:130
+  height:100,
+  marginTop:5
 
 }
 //상품 리스트 내부 상품 요소 담당 컴포넌트

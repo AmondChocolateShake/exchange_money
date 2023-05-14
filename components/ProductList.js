@@ -6,6 +6,11 @@ import { getProducts, products } from '../src/global';
 
 const ListContainer={
   flex:3,  
+  borderWidth:1,
+  borderColor:"black",
+  height:"95%",
+  justifyContent:"flex-start",
+  alignItems:"center"
 
 }
 

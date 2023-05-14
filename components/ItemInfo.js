@@ -3,7 +3,7 @@ import {View,Text} from 'react-native'
 
 
 const itemInfoBox={
-  flex:3,
+  flex:2,
   backgroundColor:"red"
 }
 

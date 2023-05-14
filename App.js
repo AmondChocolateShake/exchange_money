@@ -14,10 +14,17 @@ const container={
   alignItems:"center"
 }
 
+const innerContainer={
+  width:"95%",
+  height:"90%"
+}
+
+
 const productSt={
   flex:5,
   flexDirection:"row",
 }
+
 
 export default function App() {
   // const { width, height } = Dimensions.get('window');
@@ -25,17 +32,21 @@ export default function App() {
 
   return (
     <View style={container}>
-      <View style={productSt}>
-        <ProductList></ProductList>
-        <InputContainer></InputContainer>
+      <View style={innerContainer}>
+
+        <View style={productSt}>
+          <ProductList></ProductList>
+          <InputContainer></InputContainer>
+        </View>
+        {/* <ProductItem
+        name="책"
+        price={100000}
+        euro={20000009}
+        count={1}
+        ></ProductItem> */}
+        <TotalBox></TotalBox>
+
       </View>
-      {/* <ProductItem
-      name="책"
-      price={100000}
-      euro={20000009}
-      count={1}
-      ></ProductItem> */}
-      <TotalBox></TotalBox>
     </View>
   );
 }
