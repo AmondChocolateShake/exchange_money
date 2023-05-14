@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {Button, TextInput, View, Text} from 'react-native'
+import { Euro } from '../src/global'
 
 const textInputSt={
   width:"80%",
@@ -48,7 +49,11 @@ const InputContainer=(props)=>{
   const[euro,setEuro]=useState(0);
   
 
-
+  const exchangeWonToEuro=(Won)=>{
+    const parsedValue=parseInt(Won,10)
+    setWon(Won);
+    setEuro(Euro*parsedValue);
+  }
 
   const handleNameInput=(name)=>{
     setName(name);
@@ -90,9 +95,12 @@ const InputContainer=(props)=>{
         <TextInput 
         style={textInputSt}
         placeholder="Won"
+        value={won}
+        onChangeText={exchangeWonToEuro}
         ></TextInput>
         <TextInput style={textInputSt}
         placeholder="Euros"
+        value={euro}
         ></TextInput>
       </View>
     </View>
