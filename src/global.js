@@ -64,7 +64,7 @@ export function globalEuroToWon(euro){
 //리턴값 : 문자열
 export function globalWonToEuro(won){
   let parsedValue=parseFloat(won);
-  let result=parsedValue/0.9;
+  let result=parsedValue/WonRate;
   result=result.toFixed(2);
   result=result.toString();
   console.log(result);
