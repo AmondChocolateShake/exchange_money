@@ -51,7 +51,7 @@ const InputContainer=(props)=>{
 
   const exchangeWonToEuro=(Won)=>{
     setWon(Won);
-    let parsedValue=parseInt(Won,10);
+    let parsedValue=parseFloat(Won);
     console.log(parsedValue);
     const converted=parsedValue*Euro;
     parsedValue=converted.toString();
@@ -60,8 +60,8 @@ const InputContainer=(props)=>{
 
   const exchangeEuroToWon=(Euro)=>{
     setEuro(Euro);
-    let converted=parseFloat(Euro);
-    let result=converted*WonRate;
+    let parsedValue=parseFloat(Euro);
+    let result=parsedValue*WonRate;
     result=result.toString();
     setWon(result);
   }

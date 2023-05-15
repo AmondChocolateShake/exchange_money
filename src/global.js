@@ -4,6 +4,8 @@ const product={
   price:0,
   count:0,
 }
+
+//상품 목록
 export const products=[
   {
     name:"라면",
@@ -43,7 +45,27 @@ function addToList(obj){
   console.log(product);
 }
 
-
+//상품 목록 객체를 반환하는 함수
 export function getProducts(){
   return products;
+}
+
+
+//유로를 원화로 바꿔주는 함수
+//리턴값 : 문자열
+export function globalEuroToWon(euro){
+  let parsedValue=parseFloat(euro);
+  let result=parsedValue*WonRate;
+  result=result.toString();
+  return result
+}
+
+//원화를 유로로 바꿔주는 함수
+//리턴값 : 문자열
+export function globalWonToEuro(won){
+  let parsedValue=parseFloat(Won);
+  const result=parsedValue*Euro;
+  result=result.toString();
+  return result;
+
 }
