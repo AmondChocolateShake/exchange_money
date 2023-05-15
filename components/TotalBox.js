@@ -15,7 +15,7 @@ const innerBox1={
 
 const fontSt={
   fontSize:25,
-  fontWeight:"solid",
+  fontWeight:"semibold",
 }
 
 const innerBox2={

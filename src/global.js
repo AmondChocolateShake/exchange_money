@@ -34,15 +34,14 @@ export function putProductData(data){
   product.name=data.name;
   product.price=data.price;
   product.count=data.count;
-  product.key=data.key;
+  console.log(data);
   addToList(product);
 }
 
 
 //상품 객체를 상품 리스트 배열에 삽입하는 함수
 function addToList(obj){
-  products=[...product,obj];
-  console.log(product);
+  products.push(obj);
 }
 
 //상품 목록 객체를 반환하는 함수

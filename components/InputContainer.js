@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {Button, TextInput, View, Text} from 'react-native'
-import { WonRate, globalEuroToWon, globalWonToEuro } from '../src/global'
+import { WonRate, globalEuroToWon, globalWonToEuro, putProductData } from '../src/global'
 
 const textInputSt={
   width:"80%",
@@ -59,22 +59,35 @@ const InputContainer=(props)=>{
     setEuro(result);
   }
 
+
+
   const exchangeEuroToWon=(Euro)=>{
     setEuro(Euro);
     result=globalEuroToWon(Euro);
     setWon(result);
   }
 
+
+  //이름 입력 함수
   const handleNameInput=(name)=>{
     setName(name);
   }
 
+
+  //가격 입력 함수
   const handlePriceInput=(price)=>{
     setPrice(price)
   }
 
-  const handleEuroInput=(euro)=>{
-    setEuro(euro);
+  //상품 리스트에 상품 정보 입력하기
+  const putProductToList=()=>{
+    const obj={
+      name:name,
+      price:price,
+      count:1
+    }
+    putProductData(obj);
+
   }
 
 
@@ -98,7 +111,7 @@ const InputContainer=(props)=>{
           ></TextInput>  
 
           <View style={btnStyle}>
-            <Button title='Insert'></Button>
+            <Button title='Insert' onPress={putProductToList}></Button>
           </View>      
       </View>
 
