@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {Button, TextInput, View, Text} from 'react-native'
-import { Euro } from '../src/global'
+import { WonRate } from '../src/global'
 
 const textInputSt={
   width:"80%",
@@ -45,14 +45,25 @@ const btnStyle={
 const InputContainer=(props)=>{
   const[name,setName]=useState("");
   const[price,setPrice]=useState("");
-  const[won,setWon]=useState("");
-  const[euro,setEuro]=useState(0);
+  const[won,setWon]=useState("0");
+  const[euro,setEuro]=useState("0");
   
 
   const exchangeWonToEuro=(Won)=>{
-    const parsedValue=parseInt(Won,10)
     setWon(Won);
-    setEuro(Euro*parsedValue);
+    let parsedValue=parseInt(Won,10);
+    console.log(parsedValue);
+    const converted=parsedValue*Euro;
+    parsedValue=converted.toString();
+    setEuro(parsedValue);
+  }
+
+  const exchangeEuroToWon=(Euro)=>{
+    setEuro(Euro);
+    let converted=parseFloat(Euro);
+    let result=converted*WonRate;
+    result=result.toString();
+    setWon(result);
   }
 
   const handleNameInput=(name)=>{
@@ -96,11 +107,13 @@ const InputContainer=(props)=>{
         style={textInputSt}
         placeholder="Won"
         value={won}
-        onChangeText={exchangeWonToEuro}
+        // onChangeText={exchangeWonToEuro}
         ></TextInput>
         <TextInput style={textInputSt}
         placeholder="Euros"
         value={euro}
+        onChangeText={exchangeEuroToWon}
+
         ></TextInput>
       </View>
     </View>

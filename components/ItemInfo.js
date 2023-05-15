@@ -19,13 +19,11 @@ const ItemInfo=(props)=>{
   const[name,setName]=useState(props.name);
   const[price,setPrice]=useState(props.price);
   const[euro,setEuro]=useState(props.euro);
-  const[id,idKey]=useState(props.id+1);
 
   return(
     <View style={itemInfoBox}>
 
       <View style={nameBox}>
-        <Text>{id}</Text>
         <Text>{name}</Text>
       </View>
 

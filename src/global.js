@@ -25,7 +25,7 @@ export const products=[
 ]
 
 //유로 환율 계산을 위한 고정값
-export const Euro=1370;
+export const WonRate=1370.0;
 
 //상품 데이터 입력 함수
 export function putProductData(data){

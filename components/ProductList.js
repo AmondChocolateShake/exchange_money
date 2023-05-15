@@ -9,6 +9,7 @@ const ListContainer={
   borderWidth:1,
   borderColor:"black",
   height:"95%",
+  maxHeight:"95%",
   justifyContent:"flex-start",
   alignItems:"center"
 
