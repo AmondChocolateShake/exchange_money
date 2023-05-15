@@ -63,9 +63,11 @@ export function globalEuroToWon(euro){
 //원화를 유로로 바꿔주는 함수
 //리턴값 : 문자열
 export function globalWonToEuro(won){
-  let parsedValue=parseFloat(Won);
-  const result=parsedValue*Euro;
+  let parsedValue=parseFloat(won);
+  let result=parsedValue/0.9;
+  result=result.toFixed(2);
   result=result.toString();
+  console.log(result);
   return result;
 
 }

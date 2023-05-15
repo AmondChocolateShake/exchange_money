@@ -113,7 +113,7 @@ const InputContainer=(props)=>{
           style={textInputSt}
           placeholder="Won"
           value={won}
-          // onChangeText={exchangeWonToEuro}
+          onChangeText={exchangeWonToEuro}
           ></TextInput>
         </View>
 
