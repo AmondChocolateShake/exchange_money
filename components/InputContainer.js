@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {Button, TextInput, View, Text} from 'react-native'
-import { WonRate } from '../src/global'
+import { WonRate, globalEuroToWon, globalWonToEuro } from '../src/global'
 
 const textInputSt={
   width:"80%",
@@ -37,6 +37,10 @@ const btnStyle={
   backgroundColor:""
 }
 
+const box={
+  width:"100%",
+  alignItems:"center"
+}
 
 
 
@@ -45,24 +49,19 @@ const btnStyle={
 const InputContainer=(props)=>{
   const[name,setName]=useState("");
   const[price,setPrice]=useState("");
-  const[won,setWon]=useState("0");
-  const[euro,setEuro]=useState("0");
+  const[won,setWon]=useState("");
+  const[euro,setEuro]=useState("");
   
 
   const exchangeWonToEuro=(Won)=>{
     setWon(Won);
-    let parsedValue=parseFloat(Won);
-    console.log(parsedValue);
-    const converted=parsedValue*Euro;
-    parsedValue=converted.toString();
-    setEuro(parsedValue);
+    result=globalWonToEuro(Won);
+    setEuro(result);
   }
 
   const exchangeEuroToWon=(Euro)=>{
     setEuro(Euro);
-    let parsedValue=parseFloat(Euro);
-    let result=parsedValue*WonRate;
-    result=result.toString();
+    result=globalEuroToWon(Euro);
     setWon(result);
   }
 
@@ -77,6 +76,8 @@ const InputContainer=(props)=>{
   const handleEuroInput=(euro)=>{
     setEuro(euro);
   }
+
+
 
   return(
     <View style={container}>
@@ -102,19 +103,29 @@ const InputContainer=(props)=>{
       </View>
 
       <View style={switchBoxSt}>
-        <Text>변환기</Text>
-        <TextInput 
-        style={textInputSt}
-        placeholder="Won"
-        value={won}
-        // onChangeText={exchangeWonToEuro}
-        ></TextInput>
-        <TextInput style={textInputSt}
-        placeholder="Euros"
-        value={euro}
-        onChangeText={exchangeEuroToWon}
 
-        ></TextInput>
+        <Text>변환기</Text>
+
+        {/* Won */}
+        <View style={box}>
+          <Text>Won</Text>
+          <TextInput 
+          style={textInputSt}
+          placeholder="Won"
+          value={won}
+          // onChangeText={exchangeWonToEuro}
+          ></TextInput>
+        </View>
+
+        {/* Euro */}
+        <View style={box}>
+          <Text>Euro</Text>
+          <TextInput style={textInputSt}
+          placeholder="Euros"
+          value={euro}
+          onChangeText={exchangeEuroToWon}
+          ></TextInput>
+        </View>
       </View>
     </View>
   );
