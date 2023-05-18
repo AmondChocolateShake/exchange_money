@@ -30,13 +30,7 @@ const productSt={
 
 export default function App() {
   // const { width, height } = Dimensions.get('window');
-  const[list,setList]=useState();
-
-
-  useEffect(()=>{
-    setList(products);
-    console.log(products);
-  },[products])
+  
 
   return (
     <View style={container}>
