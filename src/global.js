@@ -1,18 +1,18 @@
 //상품 데이터 양식
-const product={
+let product={
   name:"",
   price:0,
   count:0,
 }
 
 //상품 목록
-export const products=[
+export let products=[
   {
     name:"라면",
     price:1000,
     count:1,
   },
-  {
+  { 
     name:"라면",
     price:1000,
     count:1,

@@ -82,8 +82,8 @@ const InputContainer=(props)=>{
   //상품 리스트에 상품 정보 입력하기
   const putProductToList=()=>{
     const obj={
-      name:name,
-      price:price,
+      name:"asdas",
+      price:111,
       count:1
     }
     putProductData(obj);
